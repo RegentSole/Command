@@ -1,8 +1,18 @@
 using UnityEngine;
 
+/// <summary>
+/// Неизменяемые данные, необходимые для выполнения команд.
+/// </summary>
 public class CommandData
 {
-    public Vector2 Position { get; set; }
-    public GameObject Target { get; set; }
-    public GameObject Prefab { get; set; }
+    public Vector2 Position { get; }
+    public GameObject Target { get; }
+    public GameObject Prefab { get; }
+
+    public CommandData(Vector2 position, GameObject target = null, GameObject prefab = null)
+    {
+        Position = position;
+        Target = target;
+        Prefab = prefab;
+    }
 }
